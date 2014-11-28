@@ -5,4 +5,36 @@
     <js-module name="ReflogCamera" src="www/camera.js">
         <clobbers target="cordova.plugins.ReflogCamera" />
     </js-module>
+    <platform name='ios'>
+      <config-file parent='/*' target='config.xml'>
+        <feature name='ReflogCamera'>
+          <param name='ios-package' value='CDVreflogcamera'/>
+        </feature>
+      </config-file>
+
+
+<source-file src='src/CDVreflogcamera.m'/>
+<source-file src='src/BDCamera.m'/>
+<source-file src='src/BDLivePreview.m'/>
+<source-file src='src/BDStillImageCamera.m'/>
+<source-file src='src/ExpandButton.m'/>
+<source-file src='src/BDCameraViewController.m'/>
+<header-file src='src/BDCamera.h' autogen='true'/>
+<header-file src='src/BDStillImageCamera.h' autogen='true'/>
+<header-file src='src/BDCameraViewController.h' autogen='true'/>
+<header-file src='src/ExpandButton.h' autogen='true'/>
+<header-file src='src/BDLivePreview.h' autogen='true'/>
+<resource-file src='src/trigger.png' autogen='true'/>
+<resource-file src='src/trigger@2x.png' autogen='true'/>
+
+<framework src='Foundation.framework' autogen='true'/>
+<framework src='AVFoundation.framework' autogen='true'/>
+<framework src='CoreMedia.framework' autogen='true'/>
+<framework src='CoreImage.framework' autogen='true'/>
+<framework src='OpenGLES.framework' autogen='true'/>
+<framework src='GLKit.framework' autogen='true'/>
+<framework src='QuarzCore.framework' autogen='true'/>
+<framework src='CoreGraphics.framework' autogen='true'/>
+
+    </platform>
 </plugin>
