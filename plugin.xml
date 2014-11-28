@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="org.reflog.camera.plugin" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>ReflogCamera</name>
+    <description>Custom camera for iOS8</description>
+    <js-module name="ReflogCamera" src="www/camera.js">
+        <clobbers target="cordova.plugins.ReflogCamera" />
+    </js-module>
+</plugin>
