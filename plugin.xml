@@ -35,6 +35,7 @@
 <framework src='GLKit.framework' autogen='true'/>
 <framework src='QuartzCore.framework' autogen='true'/>
 <framework src='CoreGraphics.framework' autogen='true'/>
+<framework src='CoreVideo.framework' autogen='true'/>
 
     </platform>
 </plugin>
