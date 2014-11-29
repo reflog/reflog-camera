@@ -33,7 +33,7 @@
 <framework src='CoreImage.framework' autogen='true'/>
 <framework src='OpenGLES.framework' autogen='true'/>
 <framework src='GLKit.framework' autogen='true'/>
-<framework src='QuarzCore.framework' autogen='true'/>
+<framework src='QuartzCore.framework' autogen='true'/>
 <framework src='CoreGraphics.framework' autogen='true'/>
 
     </platform>

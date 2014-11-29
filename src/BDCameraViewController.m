@@ -212,11 +212,11 @@ static float EXPOSURE_MINIMUM_DURATION = 1.0/1000; // Limit exposure duration to
 
 - (void) capture:(id) sender{
     [self.cameraView takePhotoWithCompletion:^(UIImage *image) {
-        
+        [self.delegate imageCaptured:image];
     }];
 }
 
-
+#define TOP_OFFSET 50
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -226,17 +226,17 @@ static float EXPOSURE_MINIMUM_DURATION = 1.0/1000; // Limit exposure duration to
     [self.cameraView addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(focusAndExposeTap:)]];
     [self.view addSubview:self.cameraView];
     
-    NSArray *buttons = [NSArray arrayWithObjects:@"Focus", @"Exposure", @"White Balance", nil];
-    DDExpandableButton *modeButton = [[DDExpandableButton alloc] initWithPoint:CGPointMake(20, 55) leftTitle:@"Mode:" buttons:buttons] ;
+    NSArray *buttons = [NSArray arrayWithObjects:@"Focus", @"Exposure", @"WB", nil];
+    DDExpandableButton *modeButton = [[DDExpandableButton alloc] initWithPoint:CGPointMake(20, TOP_OFFSET+55) leftTitle:@"Mode:" buttons:buttons] ;
     [[self view] addSubview:modeButton];
     self.modeButton = modeButton;
     NSArray *buttons2 = [NSArray arrayWithObjects:@"Auto", @"Manual", nil];
-    DDExpandableButton *controlButton = [[DDExpandableButton alloc] initWithPoint:CGPointMake(20, 20) leftTitle:@"Control:" buttons:buttons2] ;
+    DDExpandableButton *controlButton = [[DDExpandableButton alloc] initWithPoint:CGPointMake(20, TOP_OFFSET+20) leftTitle:@"Control:" buttons:buttons2] ;
     controlButton.toggleMode = TRUE;
     controlButton.selectedItem  = 0;
     [[self view] addSubview:controlButton];
     
-    UISlider* slider = [[UISlider alloc]initWithFrame:CGRectMake(20,85,200,40)];
+    UISlider* slider = [[UISlider alloc]initWithFrame:CGRectMake(20,TOP_OFFSET+85,200,40)];
     self.slider = slider;
     [[self view] addSubview:slider];
 

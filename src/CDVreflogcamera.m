@@ -14,11 +14,13 @@
 
 - (void)openCamera:(CDVInvokedUrlCommand*)command
 {
+    id title = [command.arguments objectAtIndex:0];
     self.callbackId = command.callbackId;
     BDCameraViewController *cameraContainer = [[BDCameraViewController alloc] initWithDelegate:self];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:cameraContainer];
     nav.delegate = self;
-    [nav setNavigationBarHidden:YES];
+    cameraContainer.title = title;
+    [nav setNavigationBarHidden:NO];
     [self.viewController presentViewController:nav animated:YES completion:nil];
 }
 #define _PHOTO_PREFIX @"RFCAMERA_"
@@ -46,6 +48,9 @@
     }
 
     [self.commandDelegate sendPluginResult:pluginResult callbackId:self.callbackId];
+}
+
+- (void)closeCamera:(CDVInvokedUrlCommand*)cmd {
     [self.viewController dismissViewControllerAnimated:YES completion:nil];
 }
 
