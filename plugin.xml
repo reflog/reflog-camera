@@ -15,12 +15,14 @@
 
 <source-file src='src/CDVreflogcamera.m'/>
 <source-file src='src/BDCamera.m'/>
+<source-file src='src/MBProgressHUD.m'/>
 <source-file src='src/BDLivePreview.m'/>
 <source-file src='src/BDStillImageCamera.m'/>
 <source-file src='src/ExpandButton.m'/>
 <source-file src='src/BDCameraViewController.m'/>
 <header-file src='src/BDCamera.h' autogen='true'/>
 <header-file src='src/BDStillImageCamera.h' autogen='true'/>
+<header-file src='src/MBProgressHUD.h' autogen='true'/>
 <header-file src='src/BDCameraViewController.h' autogen='true'/>
 <header-file src='src/ExpandButton.h' autogen='true'/>
 <header-file src='src/BDLivePreview.h' autogen='true'/>
